@@ -1,0 +1,33 @@
+<div>
+  <div class="title">
+    <h1>Totonto Waste Lookup</h1>
+  </div>
+  <div class="search" >
+    <input name="search-input" [(ngModel)]="searchString" (keyup.enter)="searchButtonClicked()" />
+    <div class="search-btn" >
+        <img src="../assets/images/search-icon.png" alt="search" (click)="searchButtonClicked()"/>
+    </div>
+  </div>
+  <div class="result">
+    <div class="result-list">
+      <div class="result-list-cell" *ngFor="let result of searchResult">
+        <div class="result-title">
+            <div [ngClass]="{'favourite': result.isFavourite,'star':true}" (click)="changeFavourites(result)"></div>
+            <p >{{result.title}}</p>
+        </div>
+        <div class="description" [innerHTML]="decodeEntities(result.body)"></div>
+      </div>
+    </div>
+    <div class="favourite" *ngIf="selectedFavourites && selectedFavourites.length">
+      <h2>Favourites</h2>
+      <div class="result-list-cell" *ngFor="let result of selectedFavourites">
+        <div class="result-title">
+            <div [ngClass]="{'favourite': result.isFavourite,'star':true}" (click)="changeFavourites(result)"></div>
+            <p >{{result.title}}</p>
+        </div>
+        <div class="description" [innerHTML]="decodeEntities(result.body)"></div>
+      </div>
+    </div>
+  </div>
+</div>
+

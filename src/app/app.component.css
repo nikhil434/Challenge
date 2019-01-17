@@ -1,0 +1,69 @@
+.title{
+    height: 132px;
+    width: 100%;
+    background-image: linear-gradient( to right, #2C5890, #4A9562);
+    display: flex;
+}
+.title h1{
+    color: #fff;
+    text-align: center;
+    margin-top: 45px;
+    width: 100%;
+}
+.search{
+    padding: 15px 18px;
+}
+.search input{
+    height: 44px;
+    position: relative;
+    width: 89%;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding-left: 15px;
+}
+.search .search-btn{
+    width: 7%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    margin-top: -1px;
+}
+.search .search-btn img{
+    height: 50px;
+}
+.star:after {
+    content: "★";
+    color: #AAA;
+    position: absolute;
+    font-size: 24px;
+    top: 6px;
+}
+.favourite.star:after{
+     color: #4A9562;
+}
+.result{
+    padding: 15px 18px;
+}
+.result-list-cell{
+    display: flex;
+    flex-direction: row;
+}
+.result-title{
+     width: 40%;
+     display: inline-block;
+     position: relative;
+}
+.description{
+     width: 60%;
+     display: inline-block;
+     font-size: 17px;
+     padding-left: 32px;
+}
+:host ::ng-deep ul{
+    padding-left: 16px !important;
+}
+.result-title p{
+    margin-left: 33px;
+    font-size: 19px;
+    margin-top: 14px;
+}
